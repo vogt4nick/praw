@@ -15,6 +15,9 @@ Add the following to your code to log everything available:
    logger = logging.getLogger('prawcore')
    logger.setLevel(logging.DEBUG)
    logger.addHandler(handler)
+   logger2 = logging.getLogger('praw')
+   logger2.setLevel(logging.DEBUG)
+   logger2.addHandler(handler)
 
 When properly configured, HTTP requests that are issued should produce output
 similar to the following:
@@ -25,5 +28,12 @@ similar to the following:
    Data: None
    Params: {'raw_json': 1}
    Response: 200 (876 bytes)
+   
+Furthermore, any API ratelimits will produce this output on top of the existing
+output:
+
+.. code-block:: text
+
+   Rate limit hit, sleeping for 5.5 seconds
 
 For more information on logging, see :py:class:`logging.Logger`.

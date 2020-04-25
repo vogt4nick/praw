@@ -584,6 +584,7 @@ class Subreddit(
                 "the original exception.",
                 ws_exception,
             )
+        print(ws_update)
         url = ws_update["payload"]["redirect"]
         return self._reddit.submission(url=url)
 

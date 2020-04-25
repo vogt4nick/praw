@@ -1020,7 +1020,9 @@ class Subreddit(
         """
         data = {
             "sr": str(self),
-            "self": selftext,
+            "api_type": "json",
+            "show_error_list": True,
+            "text": selftext,
             "options": options,
             "duration": duration,
             "resubmit": bool(resubmit),
